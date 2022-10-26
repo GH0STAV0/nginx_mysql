@@ -3,7 +3,7 @@ const sql = require("./db.js");
 // constructor
 const Customer = function(customer) {
   this.cnf_names = customer.cnf_names;
-  this.name = customer.name;
+  this.used = customer.used;
   this.active = customer.active;
 };
 
@@ -54,8 +54,8 @@ Customer.getAll = result => {
 
 Customer.updateById = (id, customer, result) => {
   sql.query(
-    "UPDATE customers SET email = ?, name = ?, active = ? WHERE id = ?",
-    [customer.email, customer.name, customer.active, id],
+    "UPDATE customers SET cnf_names = ?, used = ? WHERE id = ?",
+    [customer.cnf_names, customer.used, id],
     (err, res) => {
       if (err) {
         console.log("error: ", err);
