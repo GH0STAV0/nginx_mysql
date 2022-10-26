@@ -4,7 +4,7 @@ const sql = require("./db.js");
 const Customer = function(customer) {
   this.cnf_names = customer.cnf_names;
   this.used = customer.used;
-  this.active = customer.active;
+  //this.active = customer.active;
 };
 
 Customer.create = (newCustomer, result) => {
