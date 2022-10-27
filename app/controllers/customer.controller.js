@@ -13,7 +13,7 @@ exports.create = (req, res) => {
   const customer = new Customer({
     cnf_names: req.body.cnf_names,
     used: req.body.used,
-    active: req.body.active
+    //active: req.body.active
   });
 
   // Save Customer in the database
