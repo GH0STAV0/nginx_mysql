@@ -1,6 +1,10 @@
 module.exports = app => {
   const customers = require("../controllers/customer.controller.js");
 
+
+  // GET RANDOM CONFIG
+  app.get("/gconfig", customers.getrandom);
+
   // Create a new Customer
   app.post("/customers", customers.create);
 
@@ -9,9 +13,6 @@ module.exports = app => {
 
   // Retrieve a single Customer with customerId
   app.get("/customers/:customerId", customers.findOne);
-
-  // GET RANDOM CONFIG
-  app.get("/gconfig", customers.getrandom);
 
 
   // Update a Customer with customerId

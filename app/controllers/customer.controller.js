@@ -1,5 +1,22 @@
 const Customer = require("../models/customer.model.js");
 
+
+
+// Retrieve all Customers from the database.
+exports.getrandom = (req, res) => {
+  Customer.getAll((err, data) => {
+    if (err)
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving get random."
+      });
+    else res.send(data);
+  });
+};
+
+
+
+
 // Create and Save a new Customer
 exports.create = (req, res) => {
   // Validate request
