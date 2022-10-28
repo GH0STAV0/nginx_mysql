@@ -10,6 +10,10 @@ module.exports = app => {
   // Retrieve a single Customer with customerId
   app.get("/customers/:customerId", customers.findOne);
 
+  // GET RANDOM CONFIG
+  app.get("/gconfig", customers.getrandom);
+
+
   // Update a Customer with customerId
   app.put("/customers/:customerId", customers.update);
 
